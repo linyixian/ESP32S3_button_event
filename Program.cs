@@ -25,16 +25,10 @@ namespace ESP32S3_button_event
             Thread.Sleep(Timeout.Infinite);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// <exception cref="NotImplementedException"></exception>
         private static void ButtonPin_ValueChanged(object sender, PinValueChangedEventArgs e)
         {
             Debug.WriteLine(buttonPin.Read().ToString());
-            if (e.ChangeType == PinEventTypes.Rising)   //Pin‚Ì“dˆ³‚ª’á‚¢ó‘Ô‚©‚ç‚‚¢ó‘Ô‚É•Ï‰»‚µ‚½
+            if (e.ChangeType == PinEventTypes.Rising)   //Pinã®é›»åœ§ãŒä½ã„çŠ¶æ…‹ã‹ã‚‰é«˜ã„çŠ¶æ…‹ã«å¤‰åŒ–ã—ãŸæ™‚
             {
                 ledPin.Write(PinValue.High);
             }
